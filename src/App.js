@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Home />
-        <About />
+        <About text={{name: 'peter'}} data="About Data" />
       </header>
     </div>
   );

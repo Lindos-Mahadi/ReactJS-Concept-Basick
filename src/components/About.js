@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-function About(props) {
-    const red=()=>{
-        alert("red function called.");
-    }
-    return (
-        <div>
-            <h1 onClick={red}>{props.text}</h1>
-        </div>
-    )
+class About extends Component {
+
+    render() {
+        return (
+            <div>
+                <h1>{this.props.text.name} <br /> {this.props.data}</h1>
+            </div>
+            )
+        }
 }
 
-export default About
+export default About;
