@@ -1,25 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-class About extends Component {
-    constructor() {
-    super()
-    //STATE
-    this.state = {
-      pigeons: []
+function About(props) {
+    const red=()=>{
+        alert("red function called.");
     }
-  }
-  componentDidMount(){
-      console.warn("Called Life")
-  }
-  
-    render() {
-        return (
-            <div>
-                <h1>Hello I am class component</h1>
-                <p>Look at all the pigeons spotted today!</p>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <h1 onClick={red}>{props.text}</h1>
+        </div>
+    )
 }
 
-export default About;
+export default About

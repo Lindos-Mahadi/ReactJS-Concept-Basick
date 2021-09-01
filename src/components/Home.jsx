@@ -1,4 +1,5 @@
 import React from 'react'
+import About from './About';
 
 function Home() {
     const element1 = <h1>Introducing JSX</h1>;
@@ -7,8 +8,7 @@ function Home() {
     
     return (
         <div>
-            {element1}
-            {element2}
+            <About text= "Functional About Component" />
         </div>
     )
 }
