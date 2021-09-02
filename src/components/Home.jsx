@@ -2,24 +2,23 @@ import React, {useState} from 'react'
 import About from './About';
 
 function Home() {
-    const [toggle, setToggle] = useState();
 
+    // How to create functon in Functional Component
+    function tesFun()
+    {
+        alert("Test Func Call")
+    }
+
+    //Echma Script function
     const toggler = () =>{
-        toggle ? setToggle() : setToggle(true);
+       alert("Test Func Call")
     }
 
     return (
         <React.Fragment>
-            <div className="container">
-                <div className="row">
-                    <div className="col-6 mx-auto home">
-                        <h1>I am from Home</h1>
-                        <button className="btn btn-info btn-sm" onClick={toggler}>
-                            {toggle? <span>hide</span>:<span>show</span>}
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <h1>Home</h1>
+            <button onClick={tesFun}>Home Button Click</button>
+            <button onClick={toggler}>toggler Button Click</button>
         </React.Fragment>
     )
 }
