@@ -1,25 +1,13 @@
-import React, { Component } from 'react'
-import About from './About'
+import React, { useState } from 'react'
 
-export default class Home extends Component {
-    constructor()
-    {
-        super()
-        this.state={
-            toogle:true
-    }
-    }
-    render() {
-        return (
-            <div>
-                <h1>Component will Unmount</h1>
-                {
-                    this.state.toogle?
-                    <About />
-                    :null
-                }
-                <button onClick={()=>{this.setState({toogle:!this.state.toogle})}}>Delete</button>
-            </div>
-        )
-    }
+function Home() {
+    const[count, setCount]=useState(100)
+    return (
+        <div>
+            <h1>Hooks in functional Component {count}</h1>
+            <button onClick={()=>{setCount(count+1)}}>Count</button>
+        </div>
+    )
 }
+
+export default Home
