@@ -1,26 +1,25 @@
-import React, {useState} from 'react'
-import About from './About';
+import React, { Component } from 'react'
+import About from './About'
 
-function Home() {
-
-    // How to create functon in Functional Component
-    function tesFun()
+export default class Home extends Component {
+    constructor()
     {
-        alert("Test Func Call")
+        super()
+        this.state={
+            toogle:true
     }
-
-    //Echma Script function
-    const toggler = () =>{
-       alert("Test Func Call")
     }
-
-    return (
-        <React.Fragment>
-            <h1>Home</h1>
-            <button onClick={tesFun}>Home Button Click</button>
-            <button onClick={toggler}>toggler Button Click</button>
-        </React.Fragment>
-    )
+    render() {
+        return (
+            <div>
+                <h1>Component will Unmount</h1>
+                {
+                    this.state.toogle?
+                    <About />
+                    :null
+                }
+                <button onClick={()=>{this.setState({toogle:!this.state.toogle})}}>Delete</button>
+            </div>
+        )
+    }
 }
-
-export default Home

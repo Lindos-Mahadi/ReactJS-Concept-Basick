@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
 
 class About extends Component {
-
-    // Life Cycle
-    constructor(){
-        super()
-        this.state = {
-            active: null,
-            who: null
-        }
-        console.warn("constructor")
-    }
-    componentDidUpdate()
+    componentWillUnmount()
     {
-        // this.setState({data: "updated"})
-        console.warn("componentDidMount")
-        if(this.state.who==null)
-        {
-            this.setState({who:"Hello Lindos !"})
-        }
+        alert("About has been Deleted!")
     }
     render() {
         return (
             <div>
-                <h1>componentDidUpdate{this.state.who}</h1>
-                <button onClick={()=>{this.setState({active:"Yes"})}}>componentDidUpdate()</button>
+                <ul>
+                    <li>Name : Lindos</li>
+                    <li>Email : lindos@gmail.com</li>
+                    <li>Contact : 65321654</li>
+                </ul>
             </div>
-            )
-        }
+        );
+    }
 }
 
 export default About;
