@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
 
 class About extends Component {
-    componentWillUnmount()
+    constructor()
     {
-        alert("About has been Deleted!")
+        super()
+        this.state={
+            user: null,
+            password: null
+        }
+    }
+    submit(){
+        console.warn(this.state)
     }
     render() {
         return (
             <div>
-                <ul>
-                    <li>Name : Lindos</li>
-                    <li>Email : lindos@gmail.com</li>
-                    <li>Contact : 65321654</li>
-                </ul>
+                <h1>Form Handling use state</h1>
+                <input 
+                type="text" 
+                name="user"
+                onChange={(e)=>{this.setState({user: e.target.value})}}
+                />
+                <br />
+                <br />
+                <input 
+                type="password" 
+                name="password"
+                onChange={(e)=>{this.setState({password: e.target.value})}}
+                />
+                <br />
+                <br />
+                <button onClick={()=>this.submit()}>Submit</button>
             </div>
         );
     }
