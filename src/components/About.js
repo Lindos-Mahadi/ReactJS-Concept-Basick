@@ -5,12 +5,34 @@ class About extends Component {
     {
         super()
         this.state={
-            user: null,
-            password: null
+            name: "",
+            password: "",
+            nameError: "",
+            passwordError: ""
+        }
+    }
+    valid(){
+        if(!this.state.name.includes("@") && this.state.password.length<5){
+            this.setState({nameError: "Invalid Name", passwordError: "Password length should be more than 5"})
+        }
+        if(!this.state.name.includes("@")){
+            this.setState({nameError: "Invalid Name"})
+        }
+        if(this.state.password.length<5){
+            this.setState({passwordError: "Password length should be more than 5"})
+        }
+        else{
+            return true
         }
     }
     submit(){
-        console.warn(this.state)
+        this.setState(
+            {nameError: "", passwordError: ""}
+            )
+        // console.warn(this.state)
+        if(this.valid()){
+            alert("Form has been submited.")
+        }
     }
     render() {
         return (
@@ -18,9 +40,10 @@ class About extends Component {
                 <h1>Form Handling use state</h1>
                 <input 
                 type="text" 
-                name="user"
-                onChange={(e)=>{this.setState({user: e.target.value})}}
+                name="name"
+                onChange={(e)=>{this.setState({name: e.target.value})}}
                 />
+                <p style={{color: "red"}}>{this.state.nameError}</p>
                 <br />
                 <br />
                 <input 
@@ -28,6 +51,7 @@ class About extends Component {
                 name="password"
                 onChange={(e)=>{this.setState({password: e.target.value})}}
                 />
+                <p style={{color: "red"}}>{this.state.passwordError}</p>
                 <br />
                 <br />
                 <button onClick={()=>this.submit()}>Submit</button>
