@@ -8,9 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   return (
     <div className="App">
-        {/* <Home /> */}
-        <h1>React Portal</h1>
-        <About />
+        <About><Home /></About>
     </div>
   );
 }

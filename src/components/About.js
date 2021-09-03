@@ -1,28 +1,25 @@
-import React, { Component } from 'react'
-import { Button, Modal} from 'react-bootstrap';
-export default class About extends Component {
+import React, { Component } from 'react';
+
+class About extends Component {
     constructor(){
         super();
         this.state={
-            show:false
+            error: null
         }
     }
-    handleShow(){
-        this.setState({show:!this.state.show})
+    static getDerivedStateFromError()
+    {
+        return {error: true}
     }
     render() {
         return (
             <div>
-                <Button onClick={()=>this.handleShow()}>Click Here</Button>
-                <Modal show={this.state.show} onHide={()=>this.handleShow()}>
-                    <Modal.Header closeButton>Modal Header</Modal.Header>
-                    <Modal.Body>Hello Lindos</Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={()=>this.handleShow()}>Close</Button>
-                        <Button onClick={()=>this.handleShow()}>Save</Button>
-                    </Modal.Footer>
-                </Modal>
+                {
+                    this.state.error? <h1>Custom Page for Error Handling</h1>:this.props.children
+                }
             </div>
-        )
+        );
     }
 }
+
+export default About;

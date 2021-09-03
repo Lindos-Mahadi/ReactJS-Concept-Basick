@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import About from './About'
+import React, { Component } from 'react';
 
-function Home() {
-
-    return (
-        <div>
-            <h1>Hooks in functional Component</h1>
-        </div>
-    )
+class Home extends Component {
+    
+    render() {
+        if(true)
+        {
+            throw new Error('Custom Error')    
+        }
+        return(
+            <div>
+                <h1>React Error Boundary</h1>
+            </div>
+        )
+    }
 }
 
-export default Home
+
+export default Home;
