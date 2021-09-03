@@ -1,25 +1,12 @@
-import React, { Component } from 'react';
+import React, {memo} from 'react'
 
-class About extends Component {
-    constructor(){
-        super();
-        this.state={
-            error: null
-        }
-    }
-    static getDerivedStateFromError()
-    {
-        return {error: true}
-    }
-    render() {
-        return (
-            <div>
-                {
-                    this.state.error? <h1>Custom Page for Error Handling</h1>:this.props.children
-                }
-            </div>
-        );
-    }
+function About(props) {
+    console.warn("Inner Component", props.data)
+    return (
+        <div>
+            <h1>About Component</h1>
+        </div>
+    )
 }
 
-export default About;
+export default memo(About)

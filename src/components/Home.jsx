@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react'
+import About from './About'
 
-class Home extends Component {
-    
-    render() {
-        if(true)
-        {
-            throw new Error('Custom Error')    
-        }
-        return(
-            <div>
-                <h1>React Error Boundary</h1>
-            </div>
-        )
-    }
+function Home() {
+    const[count, setCount]=useState(0)
+    const[data, setData]=useState(0)
+    return (
+        <div>
+            <h1>Memo with Functional Component -------{count}-------{data}</h1>
+            <About data={data} />
+            <button onClick={()=>setCount(count+1)}>Count</button>
+            {/* <button onClick={()=>setData(data+1)}>data</button> */}
+        </div>
+    )
 }
 
-
-export default Home;
+export default Home
