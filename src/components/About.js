@@ -1,30 +1,27 @@
 import React, { Component } from 'react'
-import { Button, Badge} from 'react-bootstrap';
+import { Button, Modal} from 'react-bootstrap';
 export default class About extends Component {
+    constructor(){
+        super();
+        this.state={
+            show:false
+        }
+    }
+    handleShow(){
+        this.setState({show:!this.state.show})
+    }
     render() {
         return (
             <div>
-                <div>
-                <h1>
-                    Example heading <Badge bg="secondary">New</Badge>
-                </h1>
-                <h2>
-                    Example heading <Badge bg="secondary">New</Badge>
-                </h2>
-                <h3>
-                    Example heading <Badge bg="secondary">New</Badge>
-                </h3>
-                <h4>
-                    Example heading <Badge bg="secondary">New</Badge>
-                </h4>
-                <h5>
-                    Example heading <Badge bg="secondary">New</Badge>
-                </h5>
-                <h6>
-                    Example heading <Badge bg="secondary">New</Badge>
-                </h6>
-                </div>
-                <Button onClick={()=>alert('Clicked me')}>Click Here</Button>
+                <Button onClick={()=>this.handleShow()}>Click Here</Button>
+                <Modal show={this.state.show} onHide={()=>this.handleShow()}>
+                    <Modal.Header closeButton>Modal Header</Modal.Header>
+                    <Modal.Body>Hello Lindos</Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={()=>this.handleShow()}>Close</Button>
+                        <Button onClick={()=>this.handleShow()}>Save</Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
         )
     }
