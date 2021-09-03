@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 export default function About(prop)
     
  {
@@ -13,8 +12,8 @@ export default function About(prop)
     }
     return (
         <div>
-            <h1>React Style</h1>
-            <h2 style={prop.data=='aply'? h1:h2}>React Style</h2>
+            <h1 className={prop.date=='apply'? "header": ""}>React Style </h1>
+            <h2 style={prop.data=='apply'? h1:h2}>React Style</h2>
         </div>
     )
 }
