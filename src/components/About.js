@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 
-class UncontrolledCom extends Component {
+class ControlledCom extends Component {
 
     constructor() {
         super();
-        this.name = React.createRef();
-        this.password = React.createRef();
+        this.state={
+            name: "",
+            password: ""
+        }
     }
-
-
-    submitHandle(event)
+    submit()
     {
-        event.preventDefault();
-        console.warn(this.name.current.value, this.password.current.value);
+        console.warn(this.state);
     }
     render() {
         return (
             <div>
-                <h1>Uncontrolled Component</h1>
-                <form onSubmit={(event)=>{this.submitHandle(event)}}>
-                    <input type="text" placeholder= "Enter Name" ref={this.name} /><br/><br/>
-                    <input type="password" placeholder= "Enter Password" ref={this.password} /><br/><br/>
-                    <button type="submit">Submit</button>
-                </form>
+                <h1>Controlled Component</h1>
+                <input type="text" placeholder= "Enter Name" 
+                onChange={(event)=>{this.setState({name: event.target.value})}} /><br/><br/>
+                <input type="password" placeholder= "Enter Password" 
+                onChange ={(event)=>{this.setState({name: event.target.value})}} /><br/><br/>
+                <button onClick={()=>this.submit()}>Submit</button>
             </div>
         );
     }
 }
 
-export default UncontrolledCom;
+export default ControlledCom;
