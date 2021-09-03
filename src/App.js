@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
         {/* <Home /> */}
+        <h1>React Portal</h1>
         <About />
     </div>
   );
