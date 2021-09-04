@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
         <Home />
-        <About />
+        <About age={20} name="lindos" />
         {/* <LazyLoading /> */}
     </div>
   );
