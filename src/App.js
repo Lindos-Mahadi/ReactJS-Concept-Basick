@@ -9,9 +9,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   return (
     <div className="App">
-        {/* <Home /> */}
-        {/* <About /> */}
-        <LazyLoading />
+        <Home />
+        <About />
+        {/* <LazyLoading /> */}
     </div>
   );
 }
