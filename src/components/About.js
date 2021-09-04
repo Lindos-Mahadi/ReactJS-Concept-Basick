@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from "prop-types"
-import { propTypes } from 'react-bootstrap/esm/Image';
-class About extends Component {
+import { useEffect } from 'react'
 
-    render() {
-        return (
-            <div>
-                <h1>About Component Upload File</h1>
-                <h2>{this.props.age}</h2>
-            </div>
-        );
-    }
+function About(props) {
+    useEffect(()=>{
+        document.title=props + "hits on button"
+    })
+    return (
+        <div>
+            
+        </div>
+    )
 }
-About.propTypes={
-    age:PropTypes.number
-}
-export default About;
+
+export default About
